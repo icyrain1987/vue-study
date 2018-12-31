@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue基础入门</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div v-if="showOrhide">显示或隐藏1</div>
+    <div v-show="showOrhide">显示或隐藏2</div>
+  </div>
+    <script type = "text/javascript">
+    new Vue({
+      el:"#app",
+      data:{
+        showOrhide:false
+      }
+    })
+  </script>
+  <!-- 当属性值为false的时候，v-if将div从dom中删除
+  v-show则是修改display属性为none
+  如果需要频繁的切换，用v-show
+  如果在运行时很少切换，那用v-if -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue基础入门</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+  <div id = "app" v-on:click="clickMe">点我</div>
+  <div id = "app1" @click="click2Chg">{{content}}</div>
+  <script type = "text/javascript">
+    new Vue({
+      el:"#app",
+      data:{
+        content:'<h1>我是标题</h1>'
+      },
+      methods:{
+        clickMe:function(){
+          alert("你点到我了");
+        }
+      }
+    }),
+    //代码解读：事件写在vue实例的methods对象里
+    //v-on:click可以简写为@ 如 @clcik=“clickMe”
+    new Vue({
+      el:"#app1",
+      data:{
+        content:'点我该变内容'
+      },
+      methods:{
+        click2Chg:function(){
+          this.content="哈哈哈哈"
+        }
+      }
+    })
+   //改变插值
+  </script>
+</body>
+</html>

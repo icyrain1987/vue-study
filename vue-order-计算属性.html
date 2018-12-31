@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue基础入门</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>计算2个数之和</h2>
+    第一个数：<input v-model="oneNum">
+    第二个数：<input v-model="twoNum">
+    <div>计算结果：{{result}}</div>
+  </div>
+    <script type = "text/javascript">
+    new Vue({
+      el:"#app",
+      data:{
+        oneNum:'',
+        twoNum:''
+      },
+      computed:{
+        result:function(){
+          if(this.oneNum==''||this.twoNum==''){
+            return '你还没有输入'
+          }else{
+            return parseInt(this.oneNum) + parseInt(this.twoNum)
+          }
+        }
+      }
+    })
+  </script>
+  <!-- 优点 ：vue实例的computed属性，它的性能比较高
+  只有当他依赖的属性发生变化是，它才会重新计算请求
+  否则使用上一次的缓存值。所以如果一个庞大的数据项目
+  需要有缓存的，就可以用这种方法。可以减少请求次数，
+  达到优化 -->
+</body>
+</html>

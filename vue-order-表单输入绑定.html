@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset="utf-8">
+  <title>Vue基础入门</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input v-model="content"></input>
+    <div>你输入了  {{content}}</div>
+  </div>
+    <script type = "text/javascript">
+    new Vue({
+      el:"#app",
+      data:{
+        content:'这是内容'
+      }
+    })
+  </script>
+  <!-- v-model实现了双向绑定 -->
+</body>
+</html>
